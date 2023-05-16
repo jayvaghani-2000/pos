@@ -1,0 +1,21 @@
+@import "src/styles/variables.scss";
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  .inputField {
+    border: none;
+    border-bottom: 1px solid $gray5;
+    border-radius: 0px;
+    padding-left: 0px;
+    &::placeholder {
+      color: $gray3;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+

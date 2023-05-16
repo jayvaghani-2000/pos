@@ -2,12 +2,19 @@ import React from "react";
 import SvgIcon from "src/components/shared/SvgIcon";
 import CETabs from "src/components/shared/CETabs";
 import TabsLink from "src/components/shared/TabsLink";
-import styles from "./login.module.scss";
-import { isActive } from "../../utils/activeRoute";
+import { isActive } from "src/utils/activeRoute";
 import { useLocation } from "react-router-dom";
+import Fonts from "src/components/shared/CETypography";
+import { VARIANTS } from "src/components/shared/CETypography/variants";
+import EmployerLogin from "src/components/Login/EmployerLogin";
+import styles from "./login.module.scss";
 
 const Login = () => {
   const location = useLocation();
+
+  const TabContent = (children) => {
+    return <div className={styles.tabContentWrapper}>{children}</div>;
+  };
 
   return (
     <div className={styles.loginWrapper}>
@@ -18,6 +25,10 @@ const Login = () => {
       />
 
       <div className={styles.loginForm}>
+        <div className={styles.header}>
+          <Fonts variant={VARIANTS.header}>LOGIN</Fonts>
+          <Fonts variant={VARIANTS.instruction}>Please Login to continue</Fonts>
+        </div>
         <CETabs
           wrapperClassName="overRideTabsGap"
           activeKey={location.pathname}
@@ -28,13 +39,13 @@ const Login = () => {
                   iconCmp={<SvgIcon name="candidate" />}
                   text="Candidate"
                   to="/login/candidate"
-                  active={isActive("/login/candidate", location)}
+                  active={isActive("/login/candidate", location) || ["/login", "/login/"].includes(location.pathname)}
                 />
               ),
               key: ["/login", "/login/"].includes(location.pathname)
                 ? location.pathname
                 : "/login/candidate",
-              children: <>aaa</>,
+              children: TabContent(<h3>Candidate login form</h3>),
             },
             {
               label: (
@@ -46,7 +57,7 @@ const Login = () => {
                 />
               ),
               key: "/login/employer",
-              children: <>bbb</>,
+              children: TabContent(<EmployerLogin />),
             },
           ]}
         />

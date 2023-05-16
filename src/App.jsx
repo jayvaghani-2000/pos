@@ -5,7 +5,7 @@ import AuthenticatedRoute from "src/components/Routes/authenticatedRoute";
 import UnAuthenticatedRoute from "src/components/Routes/unAuthenticatedRoute";
 
 function App() {
-  const { user, userToken } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { isAuthenticated } = user;
 
   return (

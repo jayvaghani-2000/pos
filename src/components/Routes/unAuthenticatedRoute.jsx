@@ -15,6 +15,7 @@ const UnAuthenticatedRoute = () => {
         <>
           <Route path="/login/*" element={<Login />} />
           <Route path="/register" element={<>Register</>} />
+          <Route path="/forgot-password" element={<h2>Forgot Password?</h2>} />
           <Route path="*" element={<Navigate to="/login" />} />
         </>
       )}

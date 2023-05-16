@@ -13,12 +13,21 @@
   .loginForm {
     position: absolute;
     width: fit-content;
-
     box-shadow: $cardShadow;
-    padding: 39px;
-    padding-bottom: 152px;
+    padding: 39px 100px 152px 100px;
     top: 74px;
     left: 50%;
     transform: translateX(-50%);
+    .header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        margin-bottom: 56px;
+    }
   }
+}
+
+.tabContentWrapper {
+  padding-top: 48px;
 }

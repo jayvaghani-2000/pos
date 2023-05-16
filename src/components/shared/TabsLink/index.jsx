@@ -2,8 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Fonts from "src/components/shared/CETypography";
+import { VARIANTS } from "src/components/shared/CETypography/variants";
 import styles from "./tabsLink.module.scss";
-import { VARIANTS } from "../CETypography/variants";
 
 const TabsLink = (props) => {
   const { to, text, iconCmp, active = false, className } = props;
@@ -19,7 +19,7 @@ const TabsLink = (props) => {
         {!!iconCmp && iconCmp}
         <Fonts
           className={classNames({ [styles.activeLinkText]: active })}
-          variant={active ? VARIANTS[1] : VARIANTS[0]}
+          variant={active ? VARIANTS.activeTab : VARIANTS.inactiveTab}
         >
           {text}
         </Fonts>
