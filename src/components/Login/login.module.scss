@@ -1,0 +1,24 @@
+@import "src/styles/variables.scss";
+
+.loginWrapper {
+  position: fixed;
+  inset: 0;
+
+  .logo {
+    position: absolute;
+    top: 52px;
+    left: 94px;
+  }
+
+  .loginForm {
+    position: absolute;
+    width: fit-content;
+
+    box-shadow: $cardShadow;
+    padding: 39px;
+    padding-bottom: 152px;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

@@ -1,12 +1,23 @@
+import { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "src/components/Home";
+import { AuthContext } from "src/store/authentication";
+import CheckAuthenticatedUser from "src/components/Routes/checkAuthenticatedUser";
+import Login from "src/components/Login";
 
 const UnAuthenticatedRoute = () => {
+  const { hadCheckAuth } = useContext(AuthContext);
+
   return (
     <Routes>
-      <Route path="/login" element={<Home />} />
-      <Route path="/register" element={<Home />} />
-      <Route path="*" element={<Navigate to="/login" />} />
+      {!hadCheckAuth ? (
+        <Route path="*" element={<CheckAuthenticatedUser />} />
+      ) : (
+        <>
+          <Route path="/login/*" element={<Login />} />
+          <Route path="/register" element={<>Register</>} />
+          <Route path="*" element={<Navigate to="/login" />} />
+        </>
+      )}
     </Routes>
   );
 };

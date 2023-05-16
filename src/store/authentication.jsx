@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
+  const [hadCheckAuth, setHadCheckAuth] = useState(false);
   const [user, setUser] = useState({
     isAuthenticated: false,
     user: {},
@@ -11,6 +12,10 @@ export function AuthContextProvider({ children }) {
 
   const handleSetUser = (data) => {
     setUser(data);
+  };
+
+  const handleSetHadCheckAuth = (checked) => {
+    setHadCheckAuth(checked);
   };
 
   const handleSetUserToken = (token) => {
@@ -22,8 +27,10 @@ export function AuthContextProvider({ children }) {
       value={{
         user,
         userToken,
+        hadCheckAuth,
         handleSetUser,
         handleSetUserToken,
+        handleSetHadCheckAuth,
       }}
     >
       {children}
