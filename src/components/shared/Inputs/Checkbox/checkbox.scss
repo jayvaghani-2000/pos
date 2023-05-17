@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+
+.overrideCheckboxStyle {
+  .ant-checkbox {
+    outline: none !important;
+    .ant-checkbox-inner {
+      background-color: $white;
+      border-color: $black !important;
+    }
+    &.ant-checkbox-checked {
+      border-color: $maroon !important;
+      outline: none !important;
+      .ant-checkbox-inner {
+        background-color: $maroon !important;
+        border-color: $maroon !important;
+      }
+    }
+  }
+}

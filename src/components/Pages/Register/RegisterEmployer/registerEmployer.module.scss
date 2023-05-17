@@ -1,10 +1,33 @@
 @import "src/styles/variables.scss";
 
 .registerEmployerWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
   .formWrapper {
     display: grid;
     column-gap: 80px;
     row-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+  .actionWrapper {
+    width: 320px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
+    .term {
+      &:hover {
+        color: $maroon
+      }
+    }
+    .registerAction {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 4px;
+    }
   }
 }

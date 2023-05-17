@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./ceTypography.module.scss";
 
 function Fonts(props) {
-  const { as: Tag = "div", children, variant = "", className } = props;
+  const { as: Tag = "div", children, variant = "", className, ...rest } = props;
 
   const [
     fs = "fs-12",
@@ -14,9 +14,17 @@ function Fonts(props) {
   ] = variant.split(" ");
 
   const commonProps = {
-    className: classNames(styles[fs], styles[lh], styles[fw], styles[clr], styles[ff], {
-      [className]: className,
-    }),
+    className: classNames(
+      styles[fs],
+      styles[lh],
+      styles[fw],
+      styles[clr],
+      styles[ff],
+      {
+        [className]: className,
+      }
+    ),
+    ...rest,
   };
 
   const getFonts = () => {

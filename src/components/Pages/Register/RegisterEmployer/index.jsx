@@ -4,8 +4,20 @@ import Password from "src/components/shared/Inputs/Password";
 import styles from "./registerEmployer.module.scss";
 import Select from "src/components/shared/Inputs/Select";
 import SvgIcon from "src/components/shared/SvgIcon";
+import CEButton from "src/components/shared/Buttons/CEButton";
+import OutlineButton from "src/components/shared/Buttons/OutlineButton";
+import Fonts from "src/components/shared/CETypography";
+import Checkbox from "src/components/shared/Inputs/Checkbox";
+import { VARIANTS } from "src/components/shared/CETypography/variants";
+import { useNavigate } from "react-router-dom";
 
 const RegisterEmployer = () => {
+  const navigate = useNavigate();
+
+  const handleLoginEmployee = () => {
+    navigate("/login/employer");
+  };
+
   return (
     <div className={styles.registerEmployerWrapper}>
       <div className={styles.formWrapper}>
@@ -78,6 +90,44 @@ const RegisterEmployer = () => {
             name: "confirmPassword",
           }}
         />
+      </div>
+      <div className={styles.actionWrapper}>
+        <Checkbox>
+          <Fonts variant={VARIANTS.checkboxLabel}>
+            I agree with{" "}
+            <Fonts
+              variant={VARIANTS.checkboxLabelMarron}
+              as="a"
+              href="https://google.com/"
+              target="_blank"
+              className={styles.term}
+              onClick={(e) => e.stopPropagation()}
+            >
+              CB T & C *
+            </Fonts>
+            and{" "}
+            <Fonts
+              variant={VARIANTS.checkboxLabelMarron}
+              as="a"
+              href="https://google.com/"
+              target="_blank"
+              className={styles.term}
+              onClick={(e) => e.stopPropagation()}
+            >
+              Privacy Policy *
+            </Fonts>
+          </Fonts>
+        </Checkbox>
+        <CEButton>Register</CEButton>
+        <OutlineButton onClick={handleLoginEmployee}>
+          <Fonts
+            variant={VARIANTS.outlineButton}
+            className={styles.registerAction}
+          >
+            Already have an account?
+            <Fonts variant={VARIANTS.outlineButtonBold}>Login</Fonts>
+          </Fonts>
+        </OutlineButton>
       </div>
     </div>
   );

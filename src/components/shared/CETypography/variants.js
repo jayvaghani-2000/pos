@@ -10,4 +10,6 @@ export const VARIANTS = {
   outlineButton: "fs-12 lh-15 fw-6 clr-black",
   outlineButtonBold: "fs-12 lh-15 fw-6 clr-maroon",
   helperTxt: "fs-12 lh-12 fw-4 clr-gray3",
+  checkboxLabel: "fs-14 lh-15 fw-4 clr-gray1",
+  checkboxLabelMarron: "fs-14 lh-15 fw-4 clr-maroon",
 };
