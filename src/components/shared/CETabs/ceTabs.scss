@@ -3,6 +3,7 @@
 .overRiderInnerLinkWrapper {
   .ant-tabs-nav {
     margin-bottom: 0;
+    width: fit-content;
     &::before {
       border-width: 2px;
       border-color: $gray5;

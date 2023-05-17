@@ -1,0 +1,22 @@
+@import "src/styles/variables.scss";
+
+.antSelectOverride {
+  background: transparent;
+  .ant-select-selector {
+    box-shadow: none !important;
+    padding: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid $gray5 !important;
+    border-radius: 0;
+    .ant-select-selection-search {
+      .ant-select-selection-search-input {
+        &::placeholder {
+          color: $gray3;
+        }
+      }
+    }
+    .ant-select-selection-placeholder {
+      color: $gray3;
+    }
+  }
+}

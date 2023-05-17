@@ -1,15 +1,13 @@
 import Fonts from "src/components/shared/CETypography";
 import { VARIANTS } from "src/components/shared/CETypography/variants";
 import SvgIcon from "src/components/shared/SvgIcon";
-import { useState } from "react";
 import { Input } from "antd";
 import styles from "./password.module.scss";
 
 const { Password: AntdPassword } = Input;
 
 const Password = (props) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const { label, inputProps } = props;
+  const { label, inputProps, helperTxt } = props;
   const { required = false, name = "", ...restInputProps } = inputProps || {};
 
   return (
@@ -37,12 +35,12 @@ const Password = (props) => {
         iconRender={(visible) => (
           <SvgIcon
             name={visible ? "showPassword" : "hidePassword"}
-            onClick={() => setShowPassword((prev) => !prev)}
             size={{ w: 25, h: 25 }}
           />
         )}
         {...restInputProps}
       />
+      {!!helperTxt && <Fonts variant={VARIANTS.helperTxt}>{helperTxt}</Fonts>}
     </div>
   );
 };

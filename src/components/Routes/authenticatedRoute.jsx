@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "src/components/Home";
+import Home from "src/components/Pages/Home";
 
 const AuthenticatedRoute = () => {
   return (

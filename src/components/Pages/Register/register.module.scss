@@ -1,0 +1,35 @@
+@import "src/styles/variables.scss";
+
+.registerWrapper {
+  position: fixed;
+  inset: 0;
+  .logo {
+    position: absolute;
+    top: 52px;
+    left: 94px;
+  }
+  .bgBanner {
+    position: absolute;
+    bottom: 52px;
+    left: 40px;
+    z-index: -1;
+  }
+  .registerForm {
+    position: absolute;
+    width: 70%;
+    max-width: 800px;
+    top: 42px;
+    right: 60px;
+    .header {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.tabContentWrapper {
+  padding-top: 24px;
+}

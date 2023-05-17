@@ -6,7 +6,7 @@ import { isActive } from "src/utils/activeRoute";
 import { useLocation } from "react-router-dom";
 import Fonts from "src/components/shared/CETypography";
 import { VARIANTS } from "src/components/shared/CETypography/variants";
-import EmployerLogin from "src/components/Login/EmployerLogin";
+import EmployerLogin from "src/components/Pages/Login/EmployerLogin";
 import styles from "./login.module.scss";
 
 const Login = () => {
@@ -36,10 +36,13 @@ const Login = () => {
             {
               label: (
                 <TabsLink
-                  iconCmp={<SvgIcon name="candidate" />}
+                  iconCmp={<SvgIcon name="candidate" size={{ h: 36, w: 36 }} />}
                   text="Candidate"
                   to="/login/candidate"
-                  active={isActive("/login/candidate", location) || ["/login", "/login/"].includes(location.pathname)}
+                  active={
+                    isActive("/login/candidate", location) ||
+                    ["/login", "/login/"].includes(location.pathname)
+                  }
                 />
               ),
               key: ["/login", "/login/"].includes(location.pathname)
@@ -50,7 +53,7 @@ const Login = () => {
             {
               label: (
                 <TabsLink
-                  iconCmp={<SvgIcon name="employer" />}
+                  iconCmp={<SvgIcon name="employer" size={{ h: 36, w: 36 }} />}
                   text="Employer"
                   to="/login/employer"
                   active={isActive("/login/employer", location)}

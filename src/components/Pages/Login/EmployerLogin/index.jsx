@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./employerLogin.module.scss";
 import Text from "src/components/shared/Inputs/Text";
 import Password from "src/components/shared/Inputs/Password";
@@ -9,6 +9,12 @@ import CEButton from "src/components/shared/Buttons/CEButton";
 import OutlineButton from "src/components/shared/Buttons/OutlineButton";
 
 const EmployerLogin = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterEmployee = () => {
+    navigate("/register/employer");
+  };
+
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.fieldWrapper}>
@@ -41,8 +47,11 @@ const EmployerLogin = () => {
         >
           Login
         </CEButton>
-        <OutlineButton>
-          <Fonts variant={VARIANTS.outlineButton} className={styles.registerAction}>
+        <OutlineButton onClick={handleRegisterEmployee}>
+          <Fonts
+            variant={VARIANTS.outlineButton}
+            className={styles.registerAction}
+          >
             Don’t have an account?
             <Fonts variant={VARIANTS.outlineButtonBold}>Register now</Fonts>
           </Fonts>

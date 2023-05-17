@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthContext } from "src/store/authentication";
 import CheckAuthenticatedUser from "src/components/Routes/checkAuthenticatedUser";
-import Login from "src/components/Login";
+import Login from "src/components/Pages/Login";
+import Register from "src/components/Pages/Register";
 
 const UnAuthenticatedRoute = () => {
   const { hadCheckAuth } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const UnAuthenticatedRoute = () => {
       ) : (
         <>
           <Route path="/login/*" element={<Login />} />
-          <Route path="/register" element={<>Register</>} />
+          <Route path="/register/*" element={<Register />} />
           <Route path="/forgot-password" element={<h2>Forgot Password?</h2>} />
           <Route path="*" element={<Navigate to="/login" />} />
         </>
