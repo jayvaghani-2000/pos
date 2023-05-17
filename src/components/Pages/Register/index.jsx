@@ -11,7 +11,6 @@ import RegisterEmployer from "src/components/Pages/Register/RegisterEmployer";
 
 const Register = () => {
   const location = useLocation();
-
   const TabContent = (children) => {
     return <div className={styles.tabContentWrapper}>{children}</div>;
   };

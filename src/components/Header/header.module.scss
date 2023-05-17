@@ -1,0 +1,66 @@
+@import "src/styles/variables.scss";
+
+.headerWrapper {
+  height: 78px;
+  background: $headerGradient;
+  padding: 0px 55px;
+  display: flex;
+  justify-content: space-between;
+  .logoWrapper {
+    padding: 20px 0px;
+  }
+  .navigatorWrapper {
+    display: flex;
+    align-items: center;
+    .navigator {
+      margin: 27px 0px;
+      display: flex;
+      column-gap: 24px;
+    }
+    .postJobAction {
+      background-color: $white;
+      width: 138px;
+      margin: 0px 30px 0px 45px;
+    }
+    .notification {
+      margin: 8px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::before {
+        content: attr(data-unseennotification);
+        position: absolute;
+        top: -2px;
+        right: -6px;
+        border-radius: 50%;
+        background-color: $white;
+        border: 1px solid #fff3f3;
+        height: 11px;
+        width: 11px;
+        font-size: 7px;
+        line-height: 7;
+        color: $maroon;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-family: "roboto", sans-serif;
+        z-index: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .userAvatar {
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+}
+
+.headerLogo {
+  display: inline-block;
+}

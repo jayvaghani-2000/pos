@@ -12,7 +12,7 @@ const CheckAuthenticatedUser = () => {
   } = useContext(AuthContext);
 
   const activeUser = () => {
-    const token = Cookies.get("token");
+    const token = Cookies.get("tokenCB");
     if (token) {
       handleSetUserToken(token);
       handleSetUser({

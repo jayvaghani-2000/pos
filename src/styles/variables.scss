@@ -1,14 +1,22 @@
 // shadow
 $cardShadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-//color
+// color
 $black: #000000;
 $black1: #383838;
-$white: #fff;
+$white: #ffffff;
 $green: #04953e;
 $maroon: #8a1538;
 $gray1: #585757;
 $gray2: #808080;
 $gray3: #a4a9ae;
 $gray4: #c4c4c4;
-$gray5: #D1D7DB;
+$gray5: #d1d7db;
+
+// gradient
+$headerGradient: linear-gradient(
+  90deg,
+  #ffffff 12.58%,
+  #ffe9e9 20.91%,
+  #8a1538 34.45%
+);

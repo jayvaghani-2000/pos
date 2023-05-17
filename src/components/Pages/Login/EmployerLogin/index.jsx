@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./employerLogin.module.scss";
 import Text from "src/components/shared/Inputs/Text";
 import Password from "src/components/shared/Inputs/Password";
 import Fonts from "src/components/shared/CETypography";
 import { VARIANTS } from "src/components/shared/CETypography/variants";
+import { AuthContext } from "src/store/authentication";
 import CEButton from "src/components/shared/Buttons/CEButton";
 import OutlineButton from "src/components/shared/Buttons/OutlineButton";
+import Cookies from "js-cookie";
 
 const EmployerLogin = () => {
   const navigate = useNavigate();
+  const { handleSetHadCheckAuth, handleSetUser, handleSetUserToken } =
+    useContext(AuthContext);
 
   const handleRegisterEmployee = () => {
     navigate("/register/employer");
+  };
+
+  const handleSuccessfulLogin = () => {
+    Cookies.set("tokenCB", "JWT_AUTH_TOKEN", { expires: 1 });
+    handleSetHadCheckAuth(true);
+    handleSetUser({
+      isAuthenticated: true,
+      user: {},
+    });
+    handleSetUserToken("JWT_AUTH_TOKEN");
   };
 
   return (
@@ -44,6 +58,7 @@ const EmployerLogin = () => {
         <CEButton
           suffixIconName={"rightArrow"}
           iconProps={{ size: { h: 19, w: 19 } }}
+          onClick={handleSuccessfulLogin}
         >
           Login
         </CEButton>
