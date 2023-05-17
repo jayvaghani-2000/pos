@@ -1,8 +1,13 @@
-const Home = () => {
-  
-  return (
-    <div>Home</div>
-  )
-}
+import FilterCandidate from "src/components/Pages/Home/FilterCandidate";
+import Summary from "./Summary";
 
-export default Home
+const Home = () => {
+  return (
+    <div>
+      <FilterCandidate />
+      <Summary />
+    </div>
+  );
+};
+
+export default Home;

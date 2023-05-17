@@ -1,0 +1,44 @@
+@import "src/styles/variables.scss";
+
+.filterCandidateWrapper {
+  background-image: url("./../../../../../public/assets/svg/heroBgBanner.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .contentWrapper {
+    margin: 58px 20px 52px;
+    max-width: 940px;
+    width: 100%;
+    .header {
+      text-align: center;
+    }
+    .subHeader {
+      text-align: center;
+      margin: 15px 0px 12px;
+    }
+    .filterFormWrapper {
+      padding: 58px 30px 20px;
+      border: 1px solid $gray6;
+      background-color: $white;
+      .filterForm {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 50px;
+        row-gap: 30px;
+        .colFraction {
+          grid-column: span 2;
+        }
+      }
+      .formAction {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        .search {
+            width: 112px;
+        }
+      }
+    }
+  }
+}

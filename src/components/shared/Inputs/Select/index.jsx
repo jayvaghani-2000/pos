@@ -5,12 +5,15 @@ import { Select as AntSelect } from "antd";
 import SvgIcon from "src/components/shared/SvgIcon";
 import styles from "./select.module.scss";
 import "./select.scss";
+import classNames from "classnames";
 
 const Select = (props) => {
-  const { label, selectProps } = props;
+  const { label, selectProps, className } = props;
   const { required = false, name = "", ...restSelectProps } = selectProps || {};
   return (
-    <div className={styles.selectWrapper}>
+    <div
+      className={classNames(styles.selectWrapper, { [className]: className })}
+    >
       {!!label && (
         <label htmlFor={name}>
           <Fonts variant={VARIANTS.labels}>

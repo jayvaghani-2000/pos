@@ -1,0 +1,17 @@
+@import "src/styles/variables.scss";
+
+.cardWrapper {
+  padding: 32px 24px;
+  border: 1px solid $gray7;
+  min-width: 280px;
+  border-radius: 8px;
+  display: flex;
+  column-gap: 24px;
+  .contentWrapper {
+    .count {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "src/styles/variables.scss";
+
+.summaryWrapper {
+  padding: 31px 65px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  column-gap: 24px;
+  row-gap: 24px;
+  background-color: $gray8;
+}

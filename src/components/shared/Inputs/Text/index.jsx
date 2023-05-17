@@ -1,13 +1,16 @@
 import { Input } from "antd";
+import classNames from "classnames";
 import Fonts from "src/components/shared/CETypography";
 import { VARIANTS } from "src/components/shared/CETypography/variants";
 import styles from "./text.module.scss";
 
 const Text = (props) => {
-  const { label, inputProps } = props;
+  const { label, inputProps, className } = props;
   const { required = false, name = "", ...restInputProps } = inputProps || {};
   return (
-    <div className={styles.inputWrapper}>
+    <div
+      className={classNames(styles.inputWrapper, { [className]: className })}
+    >
       {!!label && (
         <label htmlFor={name}>
           <Fonts variant={VARIANTS.labels}>

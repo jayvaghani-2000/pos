@@ -10,6 +10,10 @@ const AuthenticatedRoute = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/browseTalent" element={<h3>Browse talent here</h3>} />
+        <Route
+          path="/filteredCandidate"
+          element={<h3>List of filtered candidate</h3>}
+        />
         <Route path="/pricing" element={<h3>Product Pricing</h3>} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>

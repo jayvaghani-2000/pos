@@ -21,8 +21,12 @@ const Header = () => {
       </div>
       <div className={styles.navigatorWrapper}>
         <div className={styles.navigator}>
-          <CENavigator prefixIcon={"browseTalent"} to="browseTalent">Browse Talent</CENavigator>
-          <CENavigator prefixIcon={"pricing"} to="pricing">Pricing</CENavigator>
+          <CENavigator prefixIcon={"browseTalent"} to="browseTalent">
+            Browse Talent
+          </CENavigator>
+          <CENavigator prefixIcon={"pricing"} to="pricing">
+            Pricing
+          </CENavigator>
         </div>
         <CEButton
           prefixIcon={"post"}
