@@ -61,7 +61,7 @@ const Header = () => {
         </CEButton>
 
         <div className={styles.notification} data-unseennotification="0">
-          <SvgIcon name="bell" size={{ w: 15, h: 17 }} />
+          <SvgIcon name="bell" size={{ w: 15, h: 17 }} clickable />
         </div>
 
         <Dropdown
@@ -70,7 +70,7 @@ const Header = () => {
           }}
         >
           <div className={styles.userAvatar}>
-            <SvgIcon name="userAvatar" size={{ w: 44, h: 44 }} />
+            <SvgIcon name="userAvatar" size={{ w: 44, h: 44 }} clickable />
           </div>
         </Dropdown>
       </div>
