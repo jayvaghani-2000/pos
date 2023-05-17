@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import styles from "./header.module.scss";
 import HeaderLogo from "src/components/Header/headerLogo";
 import CENavigator from "src/components/shared/CENavigator";
 import CEButton from "src/components/shared/Buttons/CEButton";
 import { VARIANTS } from "src/components/shared/CETypography/variants";
-import SvgIcon from "../shared/SvgIcon";
-import { Dropdown } from "antd";
+import SvgIcon from "src/components/shared/SvgIcon";
+import { AuthContext } from "src/store/authentication";
+import { Dropdown, Modal } from "antd";
+import Cookies from "js-cookie";
 
 const Header = () => {
+  const { handleSetUserToken, handleSetUser } = useContext(AuthContext);
+  const [confirmLogOut, setConfirmLogOut] = useState(false);
+
   const userOptions = [
     {
       key: "1",
-      label: "Logout",
+      label: (
+        <div
+          onClick={() => {
+            setConfirmLogOut(true);
+          }}
+        >
+          Logout
+        </div>
+      ),
     },
   ];
+
+  const handleLogout = () => {
+    Cookies.remove("tokenCB");
+    handleSetUserToken("");
+    handleSetUser({
+      isAuthenticated: false,
+      user: {},
+    });
+  };
+
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.logoWrapper}>
@@ -51,6 +74,19 @@ const Header = () => {
           </div>
         </Dropdown>
       </div>
+
+      <Modal
+        title="Confirm"
+        open={confirmLogOut}
+        cancelText="Cancel"
+        okText="Yes"
+        onCancel={() => setConfirmLogOut(false)}
+        onOk={handleLogout}
+        okButtonProps={{ className: styles.okButton }}
+        cancelButtonProps={{ className: styles.cancelButton }}
+      >
+        Are you sure, you want to logout?
+      </Modal>
     </div>
   );
 };

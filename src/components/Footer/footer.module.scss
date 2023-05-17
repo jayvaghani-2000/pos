@@ -1,0 +1,99 @@
+@import "src/styles/variables.scss";
+
+.footerWrapper {
+  margin: 0px 30px;
+  margin-top: 40px;
+  min-height: 50px;
+  border-radius: 10px;
+  background-image: url("/assets/svg/footerBgBanner.svg");
+  background-size: cover;
+  padding: 30px;
+  padding-bottom: 20px;
+  .topWrapper {
+    display: flex;
+    justify-content: space-between;
+    .verticalDivider {
+      flex-grow: 1;
+      max-width: 1px;
+      background-color: $gray9;
+    }
+    .bazaarDescription {
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+      width: 30%;
+      max-width: 360px;
+    }
+    .quickLinks {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      width: 20%;
+      max-width: 120px;
+      .linkWrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        .link {
+          text-decoration: none;
+        }
+      }
+    }
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      width: 25%;
+      max-width: 240px;
+      .contactWrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+      }
+      .contact {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+    }
+    .appInfo {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      width: 25%;
+      max-width: 240px;
+      .address {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+      }
+    }
+  }
+  .horizontalDivider {
+    margin: 24px 0px 30px;
+    border-bottom: 1px solid $gray9;
+  }
+  .bottomWrapper {
+    display: flex;
+    justify-content: space-between;
+    .terms {
+      display: flex;
+      column-gap: 25px;
+      align-items: center;
+    }
+    .license {
+      display: flex;
+      align-items: center;
+    }
+    .socialHandler {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+      .socialMedia {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+    }
+  }
+}

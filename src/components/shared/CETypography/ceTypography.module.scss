@@ -46,13 +46,16 @@
 .lh-15 {
   line-height: 1.5;
 }
+.lh-20 {
+  line-height: 2;
+}
 
 .clr-black {
   // #000000
   color: $black;
 }
 .clr-black1 {
-  // #ffffff
+  // #383838
   color: $black1;
 }
 .clr-white {
@@ -83,6 +86,26 @@
   // #c4c4c4
   color: $gray4;
 }
+.clr-gray5 {
+  // #d1d7db
+  color: $gray5;
+}
+.clr-gray6 {
+  // #d8d1d1
+  color: $gray6;
+}
+.clr-gray7 {
+  // #ababab
+  color: $gray7;
+}
+.clr-gray8 {
+  // #fbf9f9
+  color: $gray8;
+}
+.clr-gray9 {
+  // #4c4646
+  color: $gray9;
+}
 
 //  FONT WEIGHT
 
@@ -112,9 +135,9 @@
 }
 
 .ff-roboto {
-    font-family: "roboto", sans-serif;
+  font-family: "roboto", sans-serif;
 }
 
 .ff-heebo {
-    font-family: "heebo", sans-serif;
+  font-family: "heebo", sans-serif;
 }
