@@ -1,0 +1,56 @@
+@import "src/styles/variables.scss";
+
+.slick-slider {
+  .slick-list{
+    .slick-slide{
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .custom-prev-button,
+  .custom-next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    svg{
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  .custom-prev-button {
+    left: -58px;
+  }
+
+  .custom-next-button {
+    right: -58px;
+  }
+
+  .slick-dots{
+    bottom: -36px;
+  }
+
+  .custom-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid $maroon;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .slick-active {
+    .custom-dot{
+      background-color: $maroon;
+    }
+  }
+  
+}
