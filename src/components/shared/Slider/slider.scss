@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+
+.sliderOverride {
+  .ant-slider {
+    margin: 0;
+    .ant-slider-rail {
+      background-color: $gray4;
+    }
+    .ant-slider-track {
+      background-color: $green;
+    }
+    .ant-slider-handle {
+      &:after {
+        background-color: $green;
+        box-shadow: none;
+      }
+    }
+  }
+}

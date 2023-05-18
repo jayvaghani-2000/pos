@@ -1,13 +1,15 @@
 import FilterCandidate from "src/components/Pages/Home/FilterCandidate";
-import Summary from "./Summary";
-import ApplicationList from "./applicationList"
+import Applications from "src/components/Pages/Home/Applications";
+import Summary from "src/components/Pages/Home/Summary";
+import Candidates from "src/components/Pages/Home/Candidates";
 
 const Home = () => {
   return (
     <div>
       <FilterCandidate />
       <Summary />
-      <ApplicationList />
+      <Applications />
+      <Candidates />
     </div>
   );
 };

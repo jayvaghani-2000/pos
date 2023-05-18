@@ -1,0 +1,63 @@
+@import "src/styles/variables.scss";
+
+.applicationWrapper {
+  padding: 108px 60px 60px;
+  position: relative;
+  height: 650px;
+  .applicationBackground {
+    position: absolute;
+    bottom: 10%;
+    z-index: -1;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .applications {
+    margin-left: 300px;
+  }
+  .action {
+    text-align: center;
+    margin-top: 40px;
+    .viewAll {
+        width: 155px;
+        color: $maroon;
+    }
+  }
+}
+
+.userDetailContainer {
+  height: 313px;
+  padding: 13px 24px;
+  border: 1px solid $lightRed;
+  box-shadow: $shadow1;
+  background-color: $white;
+  .personalDetailWrapper {
+    display: flex;
+    column-gap: 20px;
+    .personalDetails {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+  .skillPercentageWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    margin-top: 6px;
+  }
+  .professionalDetails {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 12px;
+    .alignRight {
+        padding-left: 30px;
+    }
+  }
+}

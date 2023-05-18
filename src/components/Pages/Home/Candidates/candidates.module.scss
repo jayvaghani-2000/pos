@@ -1,0 +1,14 @@
+.candidatesWrapper {
+  padding: 108px 60px 60px;
+  position: relative;
+  height: 700px;
+  .candidatesBackground {
+    position: absolute;
+    right: 60px;
+    z-index: -1;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

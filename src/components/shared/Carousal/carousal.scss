@@ -1,8 +1,8 @@
 @import "src/styles/variables.scss";
 
 .slick-slider {
-  .slick-list{
-    .slick-slide{
+  .slick-list {
+    .slick-slide {
       display: flex;
       justify-content: center;
     }
@@ -18,7 +18,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    svg{
+    svg {
       width: 56px;
       height: 56px;
     }
@@ -32,7 +32,7 @@
     right: -58px;
   }
 
-  .slick-dots{
+  .slick-dots {
     bottom: -36px;
   }
 
@@ -46,11 +46,10 @@
     margin: 0 5px;
     cursor: pointer;
   }
-  
+
   .slick-active {
-    .custom-dot{
+    .custom-dot {
       background-color: $maroon;
     }
   }
-  
 }

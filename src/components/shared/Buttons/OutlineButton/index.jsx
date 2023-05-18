@@ -11,6 +11,7 @@ const OutlineButton = (props) => {
     children,
     className,
     suffixIconName = "",
+    childrenProps = {},
     iconProps = {},
     ...rest
   } = props;
@@ -21,7 +22,9 @@ const OutlineButton = (props) => {
       {...rest}
     >
       <div className={styles.textWrapper}>
-        <Fonts variant={VARIANTS.outlineButton}>{children}</Fonts>
+        <Fonts variant={VARIANTS.outlineButton} {...childrenProps}>
+          {children}
+        </Fonts>
         {!!suffixIconName && <SvgIcon name={suffixIconName} {...iconProps} />}
       </div>
     </Button>
