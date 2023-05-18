@@ -49,7 +49,7 @@ const Register = () => {
               key: ["/register", "/register/"].includes(location.pathname)
                 ? location.pathname
                 : "/register/candidate",
-              children: TabContent(<h3>Candidate login form</h3>),
+              children: TabContent(<h3>Candidate Registration form</h3>),
             },
             {
               label: (

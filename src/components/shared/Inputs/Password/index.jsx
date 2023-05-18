@@ -36,6 +36,7 @@ const Password = (props) => {
           <SvgIcon
             name={visible ? "showPassword" : "hidePassword"}
             size={{ w: 25, h: 25 }}
+            clickable
           />
         )}
         {...restInputProps}

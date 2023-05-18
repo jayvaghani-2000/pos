@@ -69,7 +69,7 @@ const CategorizedCandidates = (props) => {
           </Fonts>
         </div>
         <div className={styles.satisfyCriteria}>
-          <Slider value={75} />
+          <Slider value={a.skillsMatched} />
         </div>
         <div className={styles.professionalDetails}>
           {getDetails("Relevant Experience:", a.experience)}

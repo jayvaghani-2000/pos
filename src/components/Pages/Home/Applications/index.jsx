@@ -49,7 +49,7 @@ const Applications = () => {
             {a.skillsMatched}%
           </Fonts>
         </div>
-        <Slider value={75} />
+        <Slider value={a.skillsMatched} />
         <div className={styles.professionalDetails}>
           {getDetails("Relevant Experience:", a.experience)}
           {getDetails("Location:", a.currentLocation, styles.alignRight)}
