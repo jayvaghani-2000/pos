@@ -1,17 +1,18 @@
-import styles from "./applications.module.scss";
+import styles from "./categorizedCandidates.module.scss";
 import SvgIcon from "src/components/shared/SvgIcon/index.jsx";
-import Fonts from "src/components/shared/CETypography";
-import { VARIANTS } from "src/components/shared/CETypography/variants";
-import Carousal from "src/components/shared/Carousal";
 import Slider from "src/components/shared/Slider";
-import React from "react";
-import OutlineButton from "src/components/shared/Buttons/OutlineButton";
-import { APPLICATIONS } from "./constant";
-import { useNavigate } from "react-router-dom";
+import { VARIANTS } from "src/components/shared/CETypography/variants";
+import Fonts from "src/components/shared/CETypography";
+import { CANDIDATES, TAB_KEY } from "../constant";
+import Carousal from "src/components/shared/Carousal";
 import { toIndianCurrency } from "src/utils/helpers";
+import OutlineButton from "src/components/shared/Buttons/OutlineButton";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Applications = () => {
+const CategorizedCandidates = (props) => {
   const navigate = useNavigate();
+
   const getDetails = (key, value, className) => {
     return (
       <div className={className}>
@@ -21,9 +22,27 @@ const Applications = () => {
     );
   };
 
+  const handleSeeAllApplication = () => {
+    if (props.tab === TAB_KEY.favorite) {
+      navigate("/favorites");
+    } else {
+      navigate("/shortlisted");
+    }
+  };
+
   const getContent = () => {
-    return APPLICATIONS.map((a, index) => (
+    return CANDIDATES.map((a, index) => (
       <div className={styles.userDetailContainer} key={index}>
+        <div className={styles.setInterView}>
+          <SvgIcon name="interview" size={{ h: 18, w: 24 }} />
+          <Fonts
+            variant={VARIANTS.requireIndication}
+            as="a"
+            className={styles.interviewLink}
+          >
+            Set Interview?
+          </Fonts>
+        </div>
         <div className={styles.personalDetailWrapper}>
           <SvgIcon
             name="userIcon"
@@ -49,7 +68,9 @@ const Applications = () => {
             {a.skillsMatched}%
           </Fonts>
         </div>
-        <Slider value={75} />
+        <div className={styles.satisfyCriteria}>
+          <Slider value={75} />
+        </div>
         <div className={styles.professionalDetails}>
           {getDetails("Relevant Experience:", a.experience)}
           {getDetails("Location:", a.currentLocation, styles.alignRight)}
@@ -60,18 +81,15 @@ const Applications = () => {
     ));
   };
 
-  const handleSeeAllApplication = () => {
-    navigate("/applications");
-  };
-
   return (
-    <div className={styles.applicationWrapper}>
-      <div className={styles.applicationBackground}>
-        <SvgIcon name="applicationBgBanner" size={{ h: 451, w: 479 }} />
+    <div className={styles.candidateWrapper}>
+      <div className={styles.description}>
+        <Fonts variant={VARIANTS.header3}>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </Fonts>
       </div>
-      <Fonts variant={VARIANTS.header0} className={styles.header}>
-        Applications
-      </Fonts>
+
       <div className={styles.applications}>
         <Carousal content={getContent()} />
       </div>
@@ -88,4 +106,4 @@ const Applications = () => {
   );
 };
 
-export default Applications;
+export default CategorizedCandidates;

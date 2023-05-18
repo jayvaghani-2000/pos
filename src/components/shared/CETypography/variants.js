@@ -1,10 +1,12 @@
 export const VARIANTS = {
   inactiveTab: "fs-16 lh-12 fw-6 clr-gray2",
+  inactiveTab1: "fs-16 lh-12 fw-6 clr-black1",
   activeTab: "fs-16 lh-12 fw-6 clr-maroon",
   header: "fs-24 lh-12 fw-6 clr-black",
   header0: "fs-45 lh-12 fw-6 clr-black",
   header1: "fs-30 lh-12 fw-6 clr-black",
   header2: "fs-24 lh-12 fw-4 clr-black",
+  header3: "fs-22 lh-12 fw-4 clr-black",
   instruction: "fs-14 lh-12 fw-4 clr-black",
   labels: "fs-14 lh-15 fw-4 clr-black ff-heebo",
   labelsGreen: "fs-14 lh-12 fw-4 clr-green ff-heebo",

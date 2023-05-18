@@ -1,23 +1,14 @@
 @import "src/styles/variables.scss";
 
-.applicationWrapper {
-  padding: 108px 60px 60px;
-  position: relative;
-  height: 650px;
-  display: flex;
-  flex-direction: column;
-  .applicationBackground {
-    position: absolute;
-    bottom: 10%;
-    z-index: -1;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
+.candidateWrapper {
+  .description {
+    max-width: 400px;
+    margin-top: 60px;
   }
   .applications {
-    width: 1100px;
-    align-self: flex-end;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
   }
   .action {
     text-align: center;
@@ -30,20 +21,37 @@
 }
 
 .userDetailContainer {
-  height: 313px;
-  padding: 13px 24px;
-  border: 1px solid $lightRed;
-  box-shadow: $shadow1;
-  background-color: $white;
+  height: 319px;
+  width: 324px;
+  padding: 12px 0px 0px 0px;
+  background-color: $lightGreen;
+  .setInterView {
+    padding-right: 18px;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 5px;
+    align-items: center;
+    text-align: end;
+    margin-bottom: 10px;
+    .interviewLink {
+      color: $maroon;
+      text-decoration: underline;
+    }
+  }
   .personalDetailWrapper {
     display: flex;
     column-gap: 20px;
+    padding-left: 28px;
     .personalDetails {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
     }
+  }
+  .satisfyCriteria {
+    width: 320px;
+    padding-right: 2px;
   }
   .skillPercentageWrapper {
     display: flex;
@@ -52,9 +60,10 @@
     justify-content: flex-end;
     margin-bottom: 10px;
     margin-top: 6px;
+    padding-right: 2px;
   }
   .professionalDetails {
-    margin-top: 40px;
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
